@@ -1,0 +1,14 @@
+Pre-requisites
+```
+pip install -r requirements.txt
+python workshop/common/ReviewProcessor.py
+pip install -e .
+```
+Note that all the prediction or training functions are present in ReviewProcessor.
+
+- Tasks
+* Create producer to produce reviews to `test-workshop-1`.
+   `python workshop/workshop-1/main.py --mode=PRODUCER --topic=test-workshop-1`
+* Create consumer to consume reviews from topic `test-workshop-1` and predict sentiment on each review.
+- Expected
+* Reviews are produced to a topic and prediction is performed on each review.
