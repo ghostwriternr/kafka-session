@@ -1,10 +1,11 @@
 import pickle
 import logging
+import os
+from os.path import dirname
 from gensim.models import Word2Vec
 from nltk import tokenize
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-PROJECT_DIR = "/Users/nramesh/dev/kafka-session"
 # Tokenizer to remove non-alphabets in words.
 alpha_regex_tokenizer = tokenize.RegexpTokenizer(r'\w+')
 
@@ -46,7 +47,7 @@ def train(review):
 
 
 def get_reviews():
-    with open(PROJECT_DIR + "/data/dataset.pkl", "rb") as dataset_file:
+    with open(os.path.join(dirname(dirname(__file__)), "data", "dataset.pkl"), "rb") as dataset_file:
         reviews = pickle.load(dataset_file)
     return reviews
 
