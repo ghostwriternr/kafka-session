@@ -3,7 +3,11 @@
 Kafka uses [ZooKeeper](https://zookeeper.apache.org/) so you need to first start a ZooKeeper server if you don't already have one.
 ```sh
 > bin/zookeeper-server-start.sh config/zookeeper.properties
-[2013-04-22 15:01:37,495] INFO Reading configuration from: config/zookeeper.properties (org.apache.zookeeper.server.quorum.QuorumPeerConfig)
+```
+
+## Start Kafka Broker
+```sh
+> bin/kafka-server-start.sh config/server.properties
 ```
 
 ## Create a topic
