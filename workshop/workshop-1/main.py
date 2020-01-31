@@ -30,6 +30,7 @@ def consume_reviews(review_handler, topic='default-review', consumer_group='test
         logging.info("review={review}".format(review=review))
 
         if count % 100 == 0:
+
             logging.info("Consumed count={count} reviews".format(count=count))
 
         review_handler(review)
