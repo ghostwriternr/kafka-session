@@ -19,7 +19,7 @@ Let's create a topic named "test" with a single partition and only one replica:
 
 We can now see that topic if we run the list topic command:
 ```sh
-> bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+> bin/kafka-topics.sh --list --zookeeper localhost:2181
 test
 ```
 
@@ -47,4 +47,20 @@ This is a message
 This is another message
 ```
 
-If you have each of the above commands running in a different terminal then you should now be able to type messages into the producer terminal and see them appear in the consumer terminal.
+If you have each of the above commands running in a different terminal then you should now be able to type messages into the producer terminal and see them appear in the consumer terminal. 
+
+#### Start a consumer as part of a consumer group
+Add the following command to the end of the previous command.
+```sh
+--consumer-property group.id=your_group
+```
+
+### Alter partitions of a topic
+```shell script
+> bin/kafka-topics.sh --alter --zookeeper localhost:2181 --topic test-1 --partitions 3
+```
+
+### Describe a consumer group
+```shell script
+> bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group your_group
+```
