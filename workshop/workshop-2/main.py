@@ -49,6 +49,7 @@ if __name__ == '__main__':
     elif args.mode == "CONSUMER":
 
         # TODO Use two different consumer groups for train and predict.
+        print("Need to implement for task={task}".format(task = args.task))
         # To ensure that each review is used for predict as well as train.
         pass
 
