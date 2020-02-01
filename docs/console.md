@@ -1,4 +1,4 @@
-# Console Producer and Consumer
+# Kafka console commands
 ## Start Zookeeper
 Kafka uses [ZooKeeper](https://zookeeper.apache.org/) so you need to first start a ZooKeeper server if you don't already have one.
 ```sh
